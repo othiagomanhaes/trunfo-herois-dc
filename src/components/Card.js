@@ -5,9 +5,23 @@ const { Component } = React;
 const { string, bool } = PropTypes;
 
 class Card extends Component {
+  constructor() {
+    super();
+    this.jogaMsg = this.jogaMsg.bind(this);
+  }
+
+  jogaMsg(pode) {
+    if (pode) {
+      return (
+        <p data-testid="trunfo-card">Super Trunfo</p>
+      );
+    }
+  }
+
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3 } = this.props;
     const { cardImage, cardRare, cardTrunfo } = this.props;
+
     return (
       <div>
         <h4 data-testid="name-card">{cardName}</h4>
@@ -17,7 +31,7 @@ class Card extends Component {
         <p data-testid="attr2-card">{cardAttr2}</p>
         <p data-testid="attr3-card">{cardAttr3}</p>
         <p data-testid="rare-card">{cardRare}</p>
-        <p data-testid="trunfo-card">{cardTrunfo || ''}</p>
+        {this.jogaMsg(cardTrunfo)}
       </div>
     );
   }
