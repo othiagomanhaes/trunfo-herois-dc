@@ -7,7 +7,7 @@ const { string, bool, func } = PropTypes;
 class Form extends Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3 } = this.props;
-    const { cardImage, cardRare, cardTrunfo, hasTrunfo } = this.props;
+    const { cardImage, cardRare, cardTrunfo } = this.props; // add hasTrunfo aqui;
     const { isSaveButtonDisabled, onInputChange, onSaveButtonClick } = this.props;
 
     return (
@@ -125,7 +125,7 @@ Form.defaultProps = {
   cardImage: '',
   cardRare: '',
   cardTrunfo: false,
-  hasTrunfo: false,
+  // hasTrunfo: false,
   isSaveButtonDisabled: false,
   onInputChange: () => {},
   onSaveButtonClick: () => {},
@@ -140,7 +140,7 @@ Form.propTypes = {
   cardImage: string,
   cardRare: string,
   cardTrunfo: bool,
-  hasTrunfo: bool,
+  //   hasTrunfo: bool,
   isSaveButtonDisabled: bool,
   onInputChange: func,
   onSaveButtonClick: func,
