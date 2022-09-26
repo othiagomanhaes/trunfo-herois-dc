@@ -12,7 +12,9 @@ class Form extends Component {
 
     return (
       <form>
+        <h2>Adicione Nova Carta</h2>
         <label htmlFor="cardName">
+          <p>Nome:</p>
           <input
             data-testid="name-input"
             type="text"
@@ -24,9 +26,10 @@ class Form extends Component {
         </label>
 
         <label htmlFor="describeCard">
+          <p>Descrição:</p>
           <textarea
             data-testid="description-input"
-            name="describeCard"
+            name="cardDescription"
             id="describeCard"
             value={ cardDescription }
             onChange={ onInputChange }
@@ -34,10 +37,11 @@ class Form extends Component {
         </label>
 
         <label htmlFor="cardNumber1">
+          <p>Atributo 1</p>
           <input
             data-testid="attr1-input"
             type="number"
-            name="cardNumber1"
+            name="cardAttr1"
             id="cardNumber1"
             value={ cardAttr1 }
             onChange={ onInputChange }
@@ -45,10 +49,11 @@ class Form extends Component {
         </label>
 
         <label htmlFor="cardNumber2">
+          <p>Atributo 2</p>
           <input
             data-testid="attr2-input"
             type="number"
-            name="cardNumber2"
+            name="cardAttr2"
             id="cardNumber2"
             value={ cardAttr2 }
             onChange={ onInputChange }
@@ -56,10 +61,11 @@ class Form extends Component {
         </label>
 
         <label htmlFor="cardNumber3">
+          <p>Atributo 3</p>
           <input
             data-testid="attr3-input"
             type="number"
-            name="cardNumber3"
+            name="cardAttr3"
             id="cardNumber3"
             value={ cardAttr3 }
             onChange={ onInputChange }
@@ -67,10 +73,11 @@ class Form extends Component {
         </label>
 
         <label htmlFor="cardFile">
+          <p>Imagem</p>
           <input
             data-testid="image-input"
             type="text"
-            name="cardFile"
+            name="cardImage"
             id="cardFile"
             value={ cardImage }
             onChange={ onInputChange }
@@ -78,8 +85,9 @@ class Form extends Component {
         </label>
 
         <label htmlFor="rarityCard">
+          <p>Raridade</p>
           <select
-            name="rarity"
+            name="cardRare"
             data-testid="rare-input"
             id="rarityCard"
             value={ cardRare }
@@ -95,7 +103,7 @@ class Form extends Component {
           <input
             data-testid="trunfo-input"
             type="checkbox"
-            name="superTrunfo"
+            name="cardTrunfo"
             id="superTrunfo"
             checked={ cardTrunfo }
             onChange={ onInputChange }
