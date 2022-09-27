@@ -22,7 +22,11 @@ class App extends React.Component {
     };
   }
 
-  verificaValorAtributo = () => {
+  habilitaBtnSave = () => {
+    const { cardName, cardDescription, cardImage, cardRare } = this.state;
+    const arrayTextos = [cardName, cardDescription, cardImage, cardRare];
+    const textos = arrayTextos.every((txt) => txt.length > 0);
+
     const { cardAttr1, cardAttr2, cardAttr3 } = this.state;
     const maxNum = 90;
     const minNum = 0;
@@ -36,7 +40,7 @@ class App extends React.Component {
 
     const numeros = atributos.every((num) => num >= minNum && num <= maxNum);
 
-    if (somaAtt && numeros) {
+    if (somaAtt && numeros && textos) {
       this.setState({
         isSaveButtonDisabled: false,
       });
@@ -44,16 +48,6 @@ class App extends React.Component {
       this.setState({
         isSaveButtonDisabled: true,
       });
-    }
-  };
-
-  habilitaBtnSave = () => {
-    const { cardName, cardDescription, cardImage, cardRare } = this.state;
-    const arrayTextos = [cardName, cardDescription, cardImage, cardRare];
-    const textos = arrayTextos.every((txt) => txt.length > 0);
-
-    if (textos) {
-      this.verificaValorAtributo();
     }
   };
 
