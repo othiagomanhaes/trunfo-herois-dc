@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const { Component } = React;
-const { string, bool } = PropTypes;
+const { string, bool, number } = PropTypes;
 
 class Card extends Component {
   render() {
@@ -27,9 +27,9 @@ class Card extends Component {
 Card.propTypes = {
   cardName: string.isRequired,
   cardDescription: string.isRequired,
-  cardAttr1: string.isRequired,
-  cardAttr2: string.isRequired,
-  cardAttr3: string.isRequired,
+  cardAttr1: number.isRequired,
+  cardAttr2: number.isRequired,
+  cardAttr3: number.isRequired,
   cardImage: string.isRequired,
   cardRare: string.isRequired,
   cardTrunfo: bool.isRequired,

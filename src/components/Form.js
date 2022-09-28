@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const { Component } = React;
-const { string, bool, func } = PropTypes;
+const { string, bool, func, number } = PropTypes;
 
 class Form extends Component {
   render() {
@@ -99,16 +98,20 @@ class Form extends Component {
           </select>
         </label>
 
-        <label htmlFor="superTrunfo">
-          { !hasTrunfo ? <input
-            data-testid="trunfo-input"
-            type="checkbox"
-            name="cardTrunfo"
-            id="superTrunfo"
-            checked={ cardTrunfo }
-            onChange={ onInputChange }
-          /> : 'Você já tem um Super Trunfo em seu baralho'}
-        </label>
+        {
+          !hasTrunfo ? (
+            <label htmlFor="superTrunfo">
+              Super Trunfo
+              <input
+                data-testid="trunfo-input"
+                type="checkbox"
+                name="cardTrunfo"
+                id="superTrunfo"
+                checked={ cardTrunfo }
+                onChange={ onInputChange }
+              />
+            </label>) : <p>Você já tem um Super Trunfo em seu baralho</p>
+        }
 
         <button
           data-testid="save-button"
@@ -132,9 +135,9 @@ Form.defaultProps = {
 Form.propTypes = {
   cardName: string.isRequired,
   cardDescription: string.isRequired,
-  cardAttr1: string.isRequired,
-  cardAttr2: string.isRequired,
-  cardAttr3: string.isRequired,
+  cardAttr1: number.isRequired,
+  cardAttr2: number.isRequired,
+  cardAttr3: number.isRequired,
   cardImage: string.isRequired,
   cardRare: string.isRequired,
   cardTrunfo: bool.isRequired,
