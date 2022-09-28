@@ -113,7 +113,8 @@ class App extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3 } = this.state;
     const { cardImage, cardRare, cardTrunfo, hasTrunfo } = this.state;
-    const { isSaveButtonDisabled } = this.state;
+    const { isSaveButtonDisabled, cardList } = this.state;
+    // const filteredCardList = cardList.filter((card) => )
     return (
       <div>
         <h1>Tryunfo</h1>
@@ -142,6 +143,24 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        <section>
+          <h3>Todas as cartas</h3>
+          <div>
+            {cardList
+              .map((card) => (
+                <Card
+                  key={ card.cardName }
+                  cardName={ card.cardName }
+                  cardDescription={ card.cardDescription }
+                  cardAttr1={ card.cardAttr1 }
+                  cardAttr2={ card.cardAttr2 }
+                  cardAttr3={ card.cardAttr3 }
+                  cardImage={ card.cardImage }
+                  cardRare={ card.cardRare }
+                  cardTrunfo={ card.cardTrunfo }
+                />))}
+          </div>
+        </section>
       </div>
     );
   }
