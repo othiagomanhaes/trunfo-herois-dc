@@ -19,8 +19,33 @@ class App extends React.Component {
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
+      cardList: [],
     };
   }
+
+  salvaCard = (evt) => {
+    evt.preventDefault();
+    const { cardName, cardDescription, cardImage, cardRare } = this.state;
+    const { cardAttr1, cardAttr2, cardAttr3, isSaveButtonDisabled } = this.state;
+
+    const newCard = {
+      cardName, cardDescription, cardImage, cardRare, cardAttr1, cardAttr2, cardAttr3 };
+
+    this.setState((stateBefore) => ({
+      cardList: [...stateBefore.cardList, newCard],
+    }));
+
+    this.setState(() => ({
+      cardName: '',
+      cardDescription: '',
+      cardImage: '',
+      cardRare: 'normal',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
+      isSaveButtonDisabled: true,
+    }));
+  };
 
   habilitaBtnSave = () => {
     const { cardName, cardDescription, cardImage, cardRare } = this.state;
@@ -36,6 +61,8 @@ class App extends React.Component {
     const arrAtt = atributos.map((att) => (
       parseInt(att, 10)
     ));
+
+    // https://www.delftstack.com/pt/howto/javascript/javascript-sum-of-array/
     const somaAtt = lodash.sum(arrAtt) <= totNum;
 
     const numeros = atributos.every((num) => num >= minNum && num <= maxNum);
@@ -63,7 +90,6 @@ class App extends React.Component {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3 } = this.state;
     const { cardImage, cardRare, cardTrunfo, hasTrunfo } = this.state;
     const { isSaveButtonDisabled } = this.state;
-
     return (
       <div>
         <h1>Tryunfo</h1>
@@ -71,7 +97,7 @@ class App extends React.Component {
           cardName={ cardName }
           onChange={ this.handleTudo }
           onInputChange={ this.handleTudo }
-          onSaveButtonClick={ this.salvaForm }
+          onSaveButtonClick={ this.salvaCard }
           cardDescription={ cardDescription }
           cardAttr1={ cardAttr1 }
           cardAttr2={ cardAttr2 }
