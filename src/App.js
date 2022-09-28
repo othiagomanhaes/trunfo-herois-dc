@@ -23,17 +23,41 @@ class App extends React.Component {
     };
   }
 
+  verificaCardTrunfo = () => {
+    this.setState(() => ({
+      cardName: '',
+      cardDescription: '',
+      cardImage: '',
+      cardRare: 'normal',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
+      isSaveButtonDisabled: true,
+      hasTrunfo: true,
+    }));
+  };
+
   salvaCard = (evt) => {
     evt.preventDefault();
     const { cardName, cardDescription, cardImage, cardRare } = this.state;
-    const { cardAttr1, cardAttr2, cardAttr3 } = this.state;
+    const { cardAttr1, cardAttr2, cardAttr3, cardTrunfo } = this.state;
 
     const newCard = {
-      cardName, cardDescription, cardImage, cardRare, cardAttr1, cardAttr2, cardAttr3 };
+      cardName,
+      cardDescription,
+      cardImage,
+      cardRare,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardTrunfo,
+    };
 
     this.setState((stateBefore) => ({
       cardList: [...stateBefore.cardList, newCard],
     }));
+
+    if (cardTrunfo) this.verificaCardTrunfo();
 
     this.setState(() => ({
       cardName: '',
