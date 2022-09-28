@@ -26,7 +26,7 @@ class App extends React.Component {
   salvaCard = (evt) => {
     evt.preventDefault();
     const { cardName, cardDescription, cardImage, cardRare } = this.state;
-    const { cardAttr1, cardAttr2, cardAttr3, isSaveButtonDisabled } = this.state;
+    const { cardAttr1, cardAttr2, cardAttr3 } = this.state;
 
     const newCard = {
       cardName, cardDescription, cardImage, cardRare, cardAttr1, cardAttr2, cardAttr3 };
