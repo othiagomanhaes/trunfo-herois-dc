@@ -20,8 +20,15 @@ class App extends React.Component {
       hasTrunfo: false,
       isSaveButtonDisabled: true,
       cardList: [],
+      busca: '',
     };
   }
+
+  buscaCarta = ({ target }) => {
+    this.setState(() => ({
+      busca: target.value,
+    }));
+  };
 
   deleteCard = (carta) => {
     const { cardList } = this.state;
@@ -125,7 +132,8 @@ class App extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3 } = this.state;
     const { cardImage, cardRare, cardTrunfo, hasTrunfo } = this.state;
-    const { isSaveButtonDisabled, cardList } = this.state;
+    const { isSaveButtonDisabled, cardList, busca } = this.state;
+    const newCardList = cardList.filter((card) => card.cardName.includes(busca));
 
     return (
       <div>
@@ -157,8 +165,14 @@ class App extends React.Component {
         />
         <section>
           <h3>Todas as cartas</h3>
+          <input
+            type="text"
+            data-testid="name-filter"
+            placeholder="Busque a carta"
+            onChange={ this.buscaCarta }
+          />
           <div>
-            {cardList
+            {newCardList
               .map((card) => (
                 <div key={ card.cardName }>
                   <Card
