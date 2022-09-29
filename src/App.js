@@ -20,14 +20,25 @@ class App extends React.Component {
       hasTrunfo: false,
       isSaveButtonDisabled: true,
       cardList: [],
-      busca: '',
+      buscaNome: '',
+      cardRareFilter: 'todas',
     };
   }
 
-  buscaCarta = ({ target }) => {
-    this.setState(() => ({
-      busca: target.value,
-    }));
+  filtraTudo = () => {
+    const { cardList, buscaNome, cardRareFilter } = this.state;
+    if (buscaNome) {
+      return cardList.filter(({ cardName }) => (cardName.includes(buscaNome)));
+    }
+    if (cardRareFilter) {
+      return cardList.filter(({ cardRare }) => {
+        if (cardRareFilter === 'todas') {
+          return cardList;
+        }
+        return cardRare === cardRareFilter;
+      });
+    }
+    return cardList;
   };
 
   deleteCard = (carta) => {
@@ -132,8 +143,7 @@ class App extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3 } = this.state;
     const { cardImage, cardRare, cardTrunfo, hasTrunfo } = this.state;
-    const { isSaveButtonDisabled, cardList, busca } = this.state;
-    const newCardList = cardList.filter((card) => card.cardName.includes(busca));
+    const { isSaveButtonDisabled, buscaNome, cardRareFilter } = this.state;
 
     return (
       <div>
@@ -167,12 +177,27 @@ class App extends React.Component {
           <h3>Todas as cartas</h3>
           <input
             type="text"
+            name="buscaNome"
+            value={ buscaNome }
             data-testid="name-filter"
             placeholder="Busque a carta"
-            onChange={ this.buscaCarta }
+            onChange={ this.handleTudo }
           />
+
+          <select
+            name="cardRareFilter"
+            value={ cardRareFilter }
+            data-testid="rare-filter"
+            onChange={ this.handleTudo }
+          >
+            <option value="todas">Todas</option>
+            <option value="normal">Normal</option>
+            <option value="raro">Raro</option>
+            <option value="muito raro">Muito Raro</option>
+          </select>
+
           <div>
-            {newCardList
+            {this.filtraTudo()
               .map((card) => (
                 <div key={ card.cardName }>
                   <Card
