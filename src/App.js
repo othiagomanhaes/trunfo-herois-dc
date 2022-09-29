@@ -11,9 +11,9 @@ class App extends React.Component {
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
       cardImage: '',
       cardRare: '',
       cardTrunfo: false,
@@ -22,11 +22,15 @@ class App extends React.Component {
       cardList: [],
       buscaNome: '',
       cardRareFilter: 'todas',
+      superTruFilter: false,
     };
   }
 
   filtraTudo = () => {
-    const { cardList, buscaNome, cardRareFilter } = this.state;
+    const { cardList, buscaNome, cardRareFilter, superTruFilter } = this.state;
+    if (superTruFilter) {
+      return cardList.filter(({ cardTrunfo }) => cardTrunfo);
+    }
     if (buscaNome) {
       return cardList.filter(({ cardName }) => (cardName.includes(buscaNome)));
     }
@@ -144,6 +148,7 @@ class App extends React.Component {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3 } = this.state;
     const { cardImage, cardRare, cardTrunfo, hasTrunfo } = this.state;
     const { isSaveButtonDisabled, buscaNome, cardRareFilter } = this.state;
+    const { superTruFilter } = this.state;
 
     return (
       <div>
@@ -179,6 +184,7 @@ class App extends React.Component {
             type="text"
             name="buscaNome"
             value={ buscaNome }
+            disabled={ superTruFilter }
             data-testid="name-filter"
             placeholder="Busque a carta"
             onChange={ this.handleTudo }
@@ -187,6 +193,7 @@ class App extends React.Component {
           <select
             name="cardRareFilter"
             value={ cardRareFilter }
+            disabled={ superTruFilter }
             data-testid="rare-filter"
             onChange={ this.handleTudo }
           >
@@ -195,6 +202,18 @@ class App extends React.Component {
             <option value="raro">Raro</option>
             <option value="muito raro">Muito Raro</option>
           </select>
+
+          <label htmlFor="superT">
+            Super Trunfo
+            <input
+              data-testid="trunfo-filter"
+              type="checkbox"
+              name="superTruFilter"
+              checked={ superTruFilter }
+              id="superT"
+              onChange={ this.handleTudo }
+            />
+          </label>
 
           <div>
             {this.filtraTudo()
