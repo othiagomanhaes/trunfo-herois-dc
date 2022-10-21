@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './form.css';
 
 const { string, bool, func, number } = PropTypes;
 
@@ -8,11 +9,12 @@ class Form extends Component {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3 } = this.props;
     const { cardImage, cardRare, cardTrunfo, hasTrunfo } = this.props;
     const { isSaveButtonDisabled, onInputChange, onSaveButtonClick } = this.props;
+    const { totalPoints } = this.props;
 
     return (
-      <form>
-        <h2>Adicione Nova Carta</h2>
-        <label htmlFor="cardName">
+      <form className="newCard">
+        <h2 id="titleAddCard">Adicione Nova Carta</h2>
+        <label htmlFor="cardName" className="labelIdentify">
           <p>Nome:</p>
           <input
             data-testid="name-input"
@@ -24,7 +26,7 @@ class Form extends Component {
           />
         </label>
 
-        <label htmlFor="describeCard">
+        <label htmlFor="describeCard" className="labelIdentify">
           <p>Descrição:</p>
           <textarea
             data-testid="description-input"
@@ -35,9 +37,10 @@ class Form extends Component {
           />
         </label>
 
-        <label htmlFor="cardNumber1">
-          <p>Atributo 1</p>
+        <label htmlFor="cardNumber1" className="labelAtributo">
+          <p>Força</p>
           <input
+            className="classAtributo"
             data-testid="attr1-input"
             type="number"
             name="cardAttr1"
@@ -47,9 +50,10 @@ class Form extends Component {
           />
         </label>
 
-        <label htmlFor="cardNumber2">
-          <p>Atributo 2</p>
+        <label htmlFor="cardNumber2" className="labelAtributo">
+          <p>Poder</p>
           <input
+            className="classAtributo"
             data-testid="attr2-input"
             type="number"
             name="cardAttr2"
@@ -59,9 +63,10 @@ class Form extends Component {
           />
         </label>
 
-        <label htmlFor="cardNumber3">
-          <p>Atributo 3</p>
+        <label htmlFor="cardNumber3" className="labelAtributo">
+          <p>Inteligência</p>
           <input
+            className="classAtributo"
             data-testid="attr3-input"
             type="number"
             name="cardAttr3"
@@ -70,10 +75,11 @@ class Form extends Component {
             onChange={ onInputChange }
           />
         </label>
-
-        <label htmlFor="cardFile">
+        <p onChange={ onInputChange }>{`Pontos restantes: ${totalPoints}`}</p>
+        <label htmlFor="cardFile" className="labelAtributo">
           <p>Imagem</p>
           <input
+            className="classAtributo"
             data-testid="image-input"
             type="text"
             name="cardImage"
@@ -82,8 +88,7 @@ class Form extends Component {
             onChange={ onInputChange }
           />
         </label>
-
-        <label htmlFor="rarityCard">
+        <label htmlFor="rarityCard" className="labelRarity">
           <p>Raridade</p>
           <select
             name="cardRare"
@@ -98,29 +103,32 @@ class Form extends Component {
           </select>
         </label>
 
-        {
-          !hasTrunfo ? (
-            <label htmlFor="superTrunfo">
-              Super Trunfo
-              <input
-                data-testid="trunfo-input"
-                type="checkbox"
-                name="cardTrunfo"
-                id="superTrunfo"
-                checked={ cardTrunfo }
-                onChange={ onInputChange }
-              />
-            </label>) : <p>Você já tem um Super Trunfo em seu baralho</p>
-        }
+        <div className="divTrunfoButton">
+          {
+            !hasTrunfo ? (
+              <label htmlFor="superTrunfo">
+                Super Trunfo
+                <input
+                  data-testid="trunfo-input"
+                  type="checkbox"
+                  name="cardTrunfo"
+                  id="superTrunfo"
+                  checked={ cardTrunfo }
+                  onChange={ onInputChange }
+                />
+              </label>) : <p>Você já tem um Super Trunfo em seu baralho</p>
+          }
 
-        <button
-          data-testid="save-button"
-          type="button"
-          disabled={ isSaveButtonDisabled }
-          onClick={ onSaveButtonClick }
-        >
-          Salvar
-        </button>
+          <button
+            data-testid="save-button"
+            type="button"
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
+          >
+            Salvar
+          </button>
+        </div>
+
 
       </form>
     );

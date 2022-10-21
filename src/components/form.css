@@ -1,0 +1,66 @@
+#titleAddCard {
+  margin-top: 13px;
+  margin-bottom: 5px;
+}
+
+.newCard {
+  border: 1px solid red;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+}
+
+.divFinalNewCard {
+  display: flex;
+}
+
+.labelAtributo {
+  display: flex;
+  border: 1px solid orange;
+  height: 40px;
+  justify-content: space-between;
+  width: 75%;
+}
+
+.classAtributo {
+  width: 50%;
+  height: 80%;
+  /* border: none; */
+}
+
+.labelRarity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid blue;
+  width: 75%;
+  height: 30px;
+}
+
+.labelIdentify {
+  width: 75%;
+}
+
+#cardName {
+  width: 98%;
+  height: 40px;
+}
+
+#describeCard {
+  width: 98%;
+  height: 55px;
+}
+
+#rarityCard {
+  width: 54%;
+  height: 100%;
+}
+
+.divTrunfoButton {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid yellow;
+  width: 75%;
+}

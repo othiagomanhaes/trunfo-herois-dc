@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import './app.css';
 
 const lodash = require('lodash');
 
@@ -23,6 +24,7 @@ class App extends React.Component {
       buscaNome: '',
       cardRareFilter: 'todas',
       superTruFilter: false,
+      totalPoints: 210,
     };
   }
 
@@ -134,6 +136,8 @@ class App extends React.Component {
         isSaveButtonDisabled: true,
       });
     }
+
+    this.setState({ totalPoints: totNum - lodash.sum(arrAtt) });
   };
 
   handleTudo = ({ target }) => {
@@ -148,36 +152,39 @@ class App extends React.Component {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3 } = this.state;
     const { cardImage, cardRare, cardTrunfo, hasTrunfo } = this.state;
     const { isSaveButtonDisabled, buscaNome, cardRareFilter } = this.state;
-    const { superTruFilter } = this.state;
+    const { superTruFilter, totalPoints } = this.state;
 
     return (
       <div>
-        <h1>Tryunfo</h1>
-        <Form
-          cardName={ cardName }
-          onChange={ this.handleTudo }
-          onInputChange={ this.handleTudo }
-          onSaveButtonClick={ this.salvaCard }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          hasTrunfo={ hasTrunfo }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-        />
-        <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-        />
+        <h1 className="tituloTryunfo">Tryunfo DC</h1>
+        <div id="divCriaCard">
+          <Form
+            cardName={ cardName }
+            onChange={ this.handleTudo }
+            onInputChange={ this.handleTudo }
+            onSaveButtonClick={ this.salvaCard }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+            hasTrunfo={ hasTrunfo }
+            isSaveButtonDisabled={ isSaveButtonDisabled }
+            totalPoints={ totalPoints }
+          />
+          <Card
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+          />
+        </div>
         <section>
           <h3>Todas as cartas</h3>
           <input
@@ -215,7 +222,7 @@ class App extends React.Component {
             />
           </label>
 
-          <div>
+          <div className="oBaralho">
             {this.filtraTudo()
               .map((card) => (
                 <div key={ card.cardName }>

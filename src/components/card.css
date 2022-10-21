@@ -1,0 +1,28 @@
+.preCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid blue;
+  width: 30%;
+  height: 90%;
+}
+
+#describe {
+  width: 80%;
+  text-align: center;
+}
+
+.attClass {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+#divSuper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#superTrunfo {
+  width: 65px;
+}

@@ -1,0 +1,19 @@
+.tituloTryunfo {
+  color: red;
+  text-align: center;
+}
+
+#divCriaCard {
+  border: 1px solid green;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 75%;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.oBaralho {
+  display: flex;
+}
