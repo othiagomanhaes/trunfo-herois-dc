@@ -21,4 +21,24 @@ body {
 
 .oBaralho {
   display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+  border: 1px solid gold;
+}
+
+.cardSalvo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 345px;
+  height: 600px;
+  border: 1px solid crimson;
+}
+
+#btnDelteCard {
+  width: 30%;
 }

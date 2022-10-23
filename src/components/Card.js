@@ -12,7 +12,7 @@ class Card extends Component {
 
     return (
       <div className="preCard">
-        <h4 data-testid="name-card">{cardName}</h4>
+        <h4 data-testid="name-card" id="nomeHeroi">{cardName}</h4>
         <img data-testid="image-card" src={ cardImage } alt={ cardName } />
         <p data-testid="description-card" id="describe">{cardDescription}</p>
         <div id="divAllAtt">

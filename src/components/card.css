@@ -4,13 +4,19 @@
   flex-direction: column;
   align-items: center;
   border: 1px solid blue;
-  width: 30%;
+  width: 340px;
   height: 90%;
+  background-image: url(https://st3.depositphotos.com/1076504/14248/i/450/depositphotos_142480753-stock-photo-smoke-on-black-background.jpg);
+}
+#nomeHeroi {
+  color: white;
+  height: 800px;
 }
 
 #describe {
   width: 80%;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 #divAllAtt {
@@ -24,9 +30,12 @@
 
 .divAtt {
   display: flex;
+  padding: 5px;
+  border-radius: 8px;
   justify-content: space-between;
   align-items: center;
   border: 1px solid brown;
+  color: white;
   width: 75%;
   height: 30px;
   margin-left: auto;
@@ -39,10 +48,15 @@
   margin-bottom: 0px;
 }
 
+#raridade {
+  color: White;
+  height: 100%;
+}
+
 #divSuper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: absolute;
+  margin-top: 3%;
+  margin-left: 15%;
 }
 
 #superTrunfo {

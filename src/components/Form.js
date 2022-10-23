@@ -31,6 +31,7 @@ class Form extends Component {
           <textarea
             data-testid="description-input"
             name="cardDescription"
+            maxLength="60"
             id="describeCard"
             value={ cardDescription }
             onChange={ onInputChange }
@@ -97,9 +98,9 @@ class Form extends Component {
             value={ cardRare }
             onChange={ onInputChange }
           >
-            <option value="normal">Normal</option>
-            <option value="raro">Raro</option>
-            <option value="muito raro">Muito Raro</option>
+            <option value="Normal">Normal</option>
+            <option value="Raro">Raro</option>
+            <option value="Muito Raro">Muito Raro</option>
           </select>
         </label>
 

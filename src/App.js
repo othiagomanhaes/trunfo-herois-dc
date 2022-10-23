@@ -252,7 +252,7 @@ class App extends React.Component {
           <div className="oBaralho">
             {this.filtraTudo()
               .map((card) => (
-                <div key={ card.cardName }>
+                <div key={ card.cardName } className="cardSalvo">
                   <Card
                     cardName={ card.cardName }
                     cardDescription={ card.cardDescription }
@@ -264,6 +264,7 @@ class App extends React.Component {
                     cardTrunfo={ card.cardTrunfo }
                   />
                   <button
+                    id="btnDelteCard"
                     data-testid="delete-button"
                     key={ card.cardName }
                     type="button"
