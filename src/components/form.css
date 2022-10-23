@@ -4,6 +4,7 @@
 }
 
 .newCard {
+  background-color: white;
   border: 1px solid red;
   width: 30%;
   display: flex;
@@ -21,6 +22,7 @@
   border: 1px solid orange;
   height: 40px;
   justify-content: space-between;
+  align-items: center;
   width: 75%;
 }
 
@@ -28,6 +30,11 @@
   width: 50%;
   height: 80%;
   /* border: none; */
+}
+
+#points {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .labelRarity {
@@ -61,6 +68,8 @@
 .divTrunfoButton {
   display: flex;
   justify-content: space-between;
-  border: 1px solid yellow;
+  align-items: center;
+  border: 1px solid purple;
   width: 75%;
+  height: 7%;
 }

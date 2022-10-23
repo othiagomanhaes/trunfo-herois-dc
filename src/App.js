@@ -28,6 +28,18 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const temBaralho = localStorage.getItem('cards');
+    const baralhoArray = JSON.parse(temBaralho);
+    if (temBaralho) {
+      this.setState({ cardList: baralhoArray });
+    }
+    baralhoArray.forEach(({ cardTrunfo }) => (cardTrunfo ? this.setState({
+      hasTrunfo: true,
+      cardTrunfo: false,
+    }) : null));
+  }
+
   filtraTudo = () => {
     const { cardList, buscaNome, cardRareFilter, superTruFilter } = this.state;
     if (superTruFilter) {
@@ -61,8 +73,11 @@ class App extends React.Component {
 
     const arrFiltered = arrDasCards.filter((card) => (card.cardName !== carta.cardName));
 
+    localStorage.setItem('cards', JSON.stringify(arrFiltered));
+    const newCardList = localStorage.getItem('cards');
+
     this.setState(() => ({
-      cardList: arrFiltered,
+      cardList: JSON.parse(newCardList),
     }));
   };
 
@@ -71,6 +86,7 @@ class App extends React.Component {
       hasTrunfo: true,
       cardTrunfo: false,
     }));
+    console.log('test');
   };
 
   salvaCard = (evt) => {
@@ -89,8 +105,19 @@ class App extends React.Component {
       cardTrunfo,
     };
 
-    this.setState((stateBefore) => ({
-      cardList: [...stateBefore.cardList, newCard],
+    const temCard = localStorage.getItem('cards');
+
+    if (temCard) {
+      const asCartas = JSON.parse(temCard);
+      localStorage.setItem('cards', JSON.stringify([...asCartas, newCard]));
+    } else {
+      localStorage.setItem('cards', JSON.stringify([newCard]));
+    }
+
+    const baralho = localStorage.getItem('cards');
+
+    this.setState(({
+      cardList: JSON.parse(baralho),
     }));
 
     if (cardTrunfo) this.verificaCardTrunfo();

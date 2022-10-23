@@ -1,9 +1,14 @@
+body {
+  /* background-image: url(https://gestaoludika.com.br/wp-content/uploads/2021/08/batman-dc-comics-blog.gif); */
+}
+
 .tituloTryunfo {
   color: red;
   text-align: center;
 }
 
 #divCriaCard {
+  background-color: rgba(255, 255, 255, 0.3);
   border: 1px solid green;
   display: flex;
   justify-content: space-around;

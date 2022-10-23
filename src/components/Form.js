@@ -75,7 +75,7 @@ class Form extends Component {
             onChange={ onInputChange }
           />
         </label>
-        <p onChange={ onInputChange }>{`Pontos restantes: ${totalPoints}`}</p>
+        <p onChange={ onInputChange } id="points">{`Pontos restantes: ${totalPoints}`}</p>
         <label htmlFor="cardFile" className="labelAtributo">
           <p>Imagem</p>
           <input
