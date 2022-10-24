@@ -1,15 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 body {
   /* background-image: url(https://gestaoludika.com.br/wp-content/uploads/2021/08/batman-dc-comics-blog.gif); */
+  /* background-color: rgba(1, 1, 1, 0.9); */
+  /* background-image: url(https://i.pinimg.com/originals/fc/d2/8b/fcd28b38c1f4cceaf22fdc3641e50928.jpg); */
+  /* background-image: url(https://fondosmil.com/fondo/57957.jpg); */
+  background-image: url(https://data.whicdn.com/images/251762329/original.gif);
+  /* background-image: url(https://img.wattpad.com/136b18152c06ba98fc0975c35e8718b1b5d71f75/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f3852596d354861383930497349513d3d2d3339363830323632332e313462343261626138353034393866363334393330313331313336322e676966); */
+  
 }
 
 .tituloTryunfo {
-  color: red;
+  color: white;
   text-align: center;
+  font-size: 70px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-family: 'Russo One', sans-serif;
+  text-shadow: 2px 2px 1px black,
+  -2px 2px 1px black,
+   2px -2px 1px black,
+  -2px -2px 1px black;
 }
 
 #divCriaCard {
   background-color: rgba(255, 255, 255, 0.3);
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -17,6 +33,30 @@ body {
   height: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+
+#todasCartas {
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  text-shadow: 2px 2px 1px black,
+  -2px 2px 1px black,
+   2px -2px 1px black,
+  -2px -2px 1px black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#divFiltros {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#labelFiltroTrunfo {
+  color: white;
 }
 
 .oBaralho {
@@ -27,6 +67,8 @@ body {
   margin-right: auto;
   justify-content: space-around;
   border: 1px solid gold;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .cardSalvo {
@@ -34,11 +76,19 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 345px;
+  width: 340px;
   height: 600px;
-  border: 1px solid crimson;
+  margin-top: 20px;
+  /* border: 1px solid crimson; */
 }
 
 #btnDelteCard {
   width: 30%;
+  color: white;
+  font-family: 'Sora', sans-serif;
+  height: 34px;
+  margin-top: 2px;
+  border: 3px solid black;
+  background-color: red;
+  border-radius: 10px;
 }

@@ -22,7 +22,7 @@ class App extends React.Component {
       isSaveButtonDisabled: true,
       cardList: [],
       buscaNome: '',
-      cardRareFilter: 'todas',
+      cardRareFilter: 'Todas',
       superTruFilter: false,
       totalPoints: 210,
     };
@@ -50,7 +50,7 @@ class App extends React.Component {
     }
     if (cardRareFilter) {
       return cardList.filter(({ cardRare }) => {
-        if (cardRareFilter === 'todas') {
+        if (cardRareFilter === 'Todas') {
           return cardList;
         }
         return cardRare === cardRareFilter;
@@ -126,7 +126,7 @@ class App extends React.Component {
       cardName: '',
       cardDescription: '',
       cardImage: '',
-      cardRare: 'normal',
+      cardRare: 'Normal',
       cardAttr1: 0,
       cardAttr2: 0,
       cardAttr3: 0,
@@ -183,6 +183,9 @@ class App extends React.Component {
 
     return (
       <div>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap');
+        </style>
         <h1 className="tituloTryunfo">Tryunfo DC</h1>
         <div id="divCriaCard">
           <Form
@@ -213,41 +216,44 @@ class App extends React.Component {
           />
         </div>
         <section>
-          <h3>Todas as cartas</h3>
-          <input
-            type="text"
-            name="buscaNome"
-            value={ buscaNome }
-            disabled={ superTruFilter }
-            data-testid="name-filter"
-            placeholder="Busque a carta"
-            onChange={ this.handleTudo }
-          />
+          <h3 id="todasCartas">Todas as cartas</h3>
 
-          <select
-            name="cardRareFilter"
-            value={ cardRareFilter }
-            disabled={ superTruFilter }
-            data-testid="rare-filter"
-            onChange={ this.handleTudo }
-          >
-            <option value="todas">Todas</option>
-            <option value="normal">Normal</option>
-            <option value="raro">Raro</option>
-            <option value="muito raro">Muito Raro</option>
-          </select>
-
-          <label htmlFor="superT">
-            Super Trunfo
+          <div id="divFiltros">
             <input
-              data-testid="trunfo-filter"
-              type="checkbox"
-              name="superTruFilter"
-              checked={ superTruFilter }
-              id="superT"
+              type="text"
+              name="buscaNome"
+              value={ buscaNome }
+              disabled={ superTruFilter }
+              data-testid="name-filter"
+              placeholder="Busque a carta"
               onChange={ this.handleTudo }
             />
-          </label>
+
+            <select
+              name="cardRareFilter"
+              value={ cardRareFilter }
+              disabled={ superTruFilter }
+              data-testid="rare-filter"
+              onChange={ this.handleTudo }
+            >
+              <option value="Todas">Todas</option>
+              <option value="Normal">Normal</option>
+              <option value="Raro">Raro</option>
+              <option value="Muito Raro">Muito Raro</option>
+            </select>
+
+            <label htmlFor="superT" id="labelFiltroTrunfo">
+              Super Trunfo
+              <input
+                data-testid="trunfo-filter"
+                type="checkbox"
+                name="superTruFilter"
+                checked={ superTruFilter }
+                id="superT"
+                onChange={ this.handleTudo }
+              />
+            </label>
+          </div>
 
           <div className="oBaralho">
             {this.filtraTudo()

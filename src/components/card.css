@@ -3,20 +3,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid blue;
+  border: 3px solid rgb(253, 104, 5);
+  box-shadow: 10px 10px 5px black;
   width: 340px;
   height: 90%;
   background-image: url(https://st3.depositphotos.com/1076504/14248/i/450/depositphotos_142480753-stock-photo-smoke-on-black-background.jpg);
 }
-#nomeHeroi {
+
+.nomeHeroi {
   color: white;
   height: 800px;
 }
 
-#describe {
+.imgHero {
+  border: 2px solid gray;
+  margin: 0;
+}
+
+.describe {
   width: 80%;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
 }
 
 #divAllAtt {
@@ -48,9 +56,9 @@
   margin-bottom: 0px;
 }
 
-#raridade {
+.raridade {
   color: White;
-  height: 100%;
+  margin-top: 5px;
 }
 
 #divSuper {
