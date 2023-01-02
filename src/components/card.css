@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Yeseva+One&display=swap');
+
 .preCard {
   background-color: white;
   display: flex;
@@ -12,7 +14,16 @@
 
 .nomeHeroi {
   color: white;
-  height: 800px;
+  font-size: 20px;
+  font-family: 'Yeseva One', cursive;
+  margin-bottom: 10px;
+  /* background-color: rgb(231, 144, 13); */
+  /* width: 96%; */
+  padding-left: 15px;
+  text-shadow: 1px 1px 1px black,
+  -1px 1px 1px black,
+   1px -1px 1px black,
+  -1px -1px 1px black;
 }
 
 .imgHero {

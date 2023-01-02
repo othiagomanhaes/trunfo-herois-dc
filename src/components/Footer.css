@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+#footer-da-pag {
+  display: flex;
+  margin-bottom: 0;
+  justify-items: center;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  height: 30vh;
+  background-color: black;
+  /* border: 1px solid red; */
+  padding-left: 20%;
+  padding-right: 20%;
+
+}
+
+#texto-footer{
+  /* border: 1px solid orange; */
+  width: 50%;
+  font-size: 20px;
+  /* margin-left: 5%; */
+  text-align: center;
+}
+
+#div-linha {
+  height: 65%;
+  width: 0;
+  border: 1px solid white;
+}
+
+#footer-da-pag a {
+  text-decoration: none;
+  color: red;
+}
+
+#div-img {
+  display: flex;
+  /* border: 1px solid green; */
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70%;
+  width: 5%;
+}
+
+.img-redes {
+  height: 30%;
+  width: 100%;
+}
+
+#div-redes {
+  display: flex;
+  /* border: 1px solid green; */
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70%;
+  width: 35%;
+}
+
+#div-redes a{
+  color: white
+}

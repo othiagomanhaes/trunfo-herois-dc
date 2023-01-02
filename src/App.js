@@ -2,6 +2,7 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 import './app.css';
+import Footer from './components/Footer';
 
 const lodash = require('lodash');
 
@@ -30,14 +31,23 @@ class App extends React.Component {
 
   componentDidMount() {
     const temBaralho = localStorage.getItem('cards');
-    const baralhoArray = JSON.parse(temBaralho);
     if (temBaralho) {
+      const baralhoArray = JSON.parse(temBaralho);
       this.setState({ cardList: baralhoArray });
+      baralhoArray.forEach(({ cardTrunfo }) => (cardTrunfo ? this.setState({
+        hasTrunfo: true,
+        cardTrunfo: false,
+      }) : null));
+    } else {
+      const listDefault = '[{"cardName":"Batman","cardDescription":"Cavaleiro das trevas, justiceiro de Gotham.","cardImage":"https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/70-batman.jpg","cardRare":"Muito Raro","cardAttr1":"15","cardAttr2":"20","cardAttr3":"85","cardTrunfo":false},{"cardName":"Superman","cardDescription":"Filho de Krypton, homem de aço.","cardImage":" https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/644-superman.jpg","cardRare":"Muito Raro","cardAttr1":"80","cardAttr2":"85","cardAttr3":"45","cardTrunfo":true},{"cardName":"Aquaman","cardDescription":"Rei dos mares, Rei de Atlanta.","cardImage":"https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/38-aquaman.jpg","cardRare":"Normal","cardAttr1":"60","cardAttr2":"65","cardAttr3":"40","cardTrunfo":false},{"cardName":"Wonder Woman","cardDescription":"Rainha das amazonas, princesa de Themyscira.","cardImage":"https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/720-wonder-woman.jpg","cardRare":"Muito Raro","cardAttr1":"70","cardAttr2":"73","cardAttr3":"67","cardTrunfo":false},{"cardName":"Black Adam","cardDescription":"Rei e campeão de Kahndaq, primeiro campeão dp Mago Shazam.","cardImage":"https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/95-black-adam.jpg","cardRare":"Normal","cardAttr1":"74","cardAttr2":"79","cardAttr3":"40","cardTrunfo":false},{"cardName":"Flash","cardDescription":"O homem mais rápido do mundo. Membro da liga da justiça.","cardImage":"https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/265-flash-ii.jpg","cardRare":"Raro","cardAttr1":"50","cardAttr2":"83","cardAttr3":"77","cardTrunfo":false}]';
+      const listDefaultArr = JSON.parse(listDefault);
+      this.setState({ cardList: listDefaultArr });
+      this.setState({ cardList: listDefaultArr });
+      listDefaultArr.forEach(({ cardTrunfo }) => (cardTrunfo ? this.setState({
+        cardTrunfo: false,
+        hasTrunfo: true,
+      }) : null));
     }
-    baralhoArray.forEach(({ cardTrunfo }) => (cardTrunfo ? this.setState({
-      hasTrunfo: true,
-      cardTrunfo: false,
-    }) : null));
   }
 
   filtraTudo = () => {
@@ -86,7 +96,6 @@ class App extends React.Component {
       hasTrunfo: true,
       cardTrunfo: false,
     }));
-    console.log('test');
   };
 
   salvaCard = (evt) => {
@@ -183,9 +192,6 @@ class App extends React.Component {
 
     return (
       <div>
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap');
-        </style>
         <h1 className="tituloTryunfo">Tryunfo DC</h1>
         <div id="divCriaCard">
           <Form
@@ -282,6 +288,7 @@ class App extends React.Component {
               ))}
           </div>
         </section>
+        <Footer />
       </div>
     );
   }
