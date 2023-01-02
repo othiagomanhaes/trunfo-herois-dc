@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/trunfo-herois-dc/static/css/main.a91bd317.css",
-    "main.js": "/trunfo-herois-dc/static/js/main.5682bd6f.js",
+    "main.css": "/trunfo-herois-dc/static/css/main.c9c8f6b7.css",
+    "main.js": "/trunfo-herois-dc/static/js/main.be77730e.js",
     "index.html": "/trunfo-herois-dc/index.html",
-    "main.a91bd317.css.map": "/trunfo-herois-dc/static/css/main.a91bd317.css.map",
-    "main.5682bd6f.js.map": "/trunfo-herois-dc/static/js/main.5682bd6f.js.map"
+    "main.c9c8f6b7.css.map": "/trunfo-herois-dc/static/css/main.c9c8f6b7.css.map",
+    "main.be77730e.js.map": "/trunfo-herois-dc/static/js/main.be77730e.js.map"
   },
   "entrypoints": [
-    "static/css/main.a91bd317.css",
-    "static/js/main.5682bd6f.js"
+    "static/css/main.c9c8f6b7.css",
+    "static/js/main.be77730e.js"
   ]
 }
