@@ -53,7 +53,13 @@ class Footer extends Component {
           >
             LinkedIn
           </a>
-          <a href="">Repositório do projeto no Github em breve</a>
+          <a
+            href="https://github.com/othiagomanhaes/trunfo-herois-dc"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Repositório do projeto no Github
+          </a>
         </div>
       </footer>
     );

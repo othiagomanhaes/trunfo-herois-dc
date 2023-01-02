@@ -30,6 +30,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    document.title = "Trunfo Herois DC";
     const temBaralho = localStorage.getItem('cards');
     if (temBaralho) {
       const baralhoArray = JSON.parse(temBaralho);

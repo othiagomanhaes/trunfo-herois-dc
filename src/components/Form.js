@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './form.css';
 
-const { string, bool, func, number } = PropTypes;
-
 class Form extends Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3 } = this.props;
@@ -117,7 +115,7 @@ class Form extends Component {
                   checked={ cardTrunfo }
                   onChange={ onInputChange }
                 />
-              </label>) : <p>Você já tem um Super Trunfo em seu baralho</p>
+              </label>) : <p id="jaSupTru">Você já tem um Super Trunfo em seu baralho</p>
           }
 
           <button
@@ -129,8 +127,6 @@ class Form extends Component {
             Salvar
           </button>
         </div>
-
-
       </form>
     );
   }
@@ -142,18 +138,19 @@ Form.defaultProps = {
 };
 
 Form.propTypes = {
-  cardName: string.isRequired,
-  cardDescription: string.isRequired,
-  cardAttr1: number.isRequired,
-  cardAttr2: number.isRequired,
-  cardAttr3: number.isRequired,
-  cardImage: string.isRequired,
-  cardRare: string.isRequired,
-  cardTrunfo: bool.isRequired,
-  hasTrunfo: bool.isRequired,
-  isSaveButtonDisabled: bool.isRequired,
-  onInputChange: func,
-  onSaveButtonClick: func,
+  cardAttr1: PropTypes.number.isRequired,
+  cardAttr2: PropTypes.number.isRequired,
+  cardAttr3: PropTypes.number.isRequired,
+  cardDescription: PropTypes.string.isRequired,
+  cardImage: PropTypes.string.isRequired,
+  cardName: PropTypes.string.isRequired,
+  cardRare: PropTypes.string.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
+  isSaveButtonDisabled: PropTypes.bool.isRequired,
+  onInputChange: PropTypes.func,
+  onSaveButtonClick: PropTypes.func,
+  totalPoints: PropTypes.number.isRequired,
 };
 
 export default Form;
