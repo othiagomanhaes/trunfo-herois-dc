@@ -58,6 +58,7 @@
 #describeCard {
   width: 98%;
   height: 55px;
+  resize: none;
 }
 
 #rarityCard {

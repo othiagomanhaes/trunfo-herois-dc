@@ -16,6 +16,7 @@ class Form extends Component {
           <p>Nome:</p>
           <input
             data-testid="name-input"
+            maxLength="25"
             type="text"
             name="cardName"
             id="cardName"
@@ -85,6 +86,7 @@ class Form extends Component {
             id="cardFile"
             value={ cardImage }
             onChange={ onInputChange }
+            placeholder="link da imagem"
           />
         </label>
         <label htmlFor="rarityCard" className="labelRarity">
