@@ -29,6 +29,8 @@
 .imgHero {
   border: 2px solid gray;
   margin: 0;
+  height: 45%;
+  width: 50%;
 }
 
 .describe {
@@ -80,4 +82,16 @@
 
 #superTrunfo {
   width: 65px;
+}
+
+@media (max-width: 560px) {
+  .preCard {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .preCard {
+    height: 600px;
+  }
 }

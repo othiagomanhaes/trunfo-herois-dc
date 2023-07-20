@@ -21,7 +21,7 @@ class Footer extends Component {
           não podem ser negativos ou serem superiores a 90 pontos.
         </p>
         <div id="div-linha" />
-        <div id="div-img">
+        {/* <div id="div-img">
           <img
             src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
             alt="logo insta"
@@ -37,28 +37,40 @@ class Footer extends Component {
             alt="logo github"
             className="img-redes"
           />
-        </div>
+        </div> */}
         <div id="div-redes">
           <a
             href="https://www.instagram.com/othiagomanhaes/"
             target="_blank"
             rel="noreferrer"
           >
-            Instagram
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+              alt="logo insta"
+              className="img-redes"
+            />
           </a>
           <a
             href="https://www.linkedin.com/in/thiago-manhaes/"
             target="_blank"
             rel="noreferrer"
           >
-            LinkedIn
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+              alt="logo linkedin"
+              className="img-redes"
+            />
           </a>
           <a
             href="https://github.com/othiagomanhaes/trunfo-herois-dc"
             target="_blank"
             rel="noreferrer"
           >
-            Repositório do projeto no Github
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/1322/1322053.png"
+              alt="logo github"
+              className="img-redes"
+            />
           </a>
         </div>
       </footer>

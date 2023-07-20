@@ -2,12 +2,7 @@
 
 body {
   padding: 0;
-  /* background-image: url(https://gestaoludika.com.br/wp-content/uploads/2021/08/batman-dc-comics-blog.gif); */
-  /* background-color: rgba(1, 1, 1, 0.9); */
-  /* background-image: url(https://i.pinimg.com/originals/fc/d2/8b/fcd28b38c1f4cceaf22fdc3641e50928.jpg); */
-  /* background-image: url(https://fondosmil.com/fondo/57957.jpg); */
-  background-image: url(https://data.whicdn.com/images/251762329/original.gif);
-  /* background-image: url(https://img.wattpad.com/136b18152c06ba98fc0975c35e8718b1b5d71f75/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f3852596d354861383930497349513d3d2d3339363830323632332e313462343261626138353034393866363334393330313331313336322e676966); */
+  background-image: url(https://i.pinimg.com/originals/e1/a6/9e/e1a69ebd95d53e16e0332805df9af51b.gif);
 }
 
 .tituloTryunfo {
@@ -25,12 +20,11 @@ body {
 
 #divCriaCard {
   background-color: rgba(255, 255, 255, 0.3);
-  /* border: 1px solid green; */
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 75%;
-  height: 600px;
+  height: 650px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -91,4 +85,17 @@ body {
   border: 3px solid black;
   background-color: red;
   border-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+  #divCriaCard {
+    flex-direction: column;
+    height: 1300px;
+  }
+}
+
+@media (max-width: 350px) {
+  #divFiltros {
+    flex-direction: column;
+  }
 }

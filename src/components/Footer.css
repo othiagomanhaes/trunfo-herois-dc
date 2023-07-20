@@ -16,7 +16,6 @@
 }
 
 #texto-footer{
-  /* border: 1px solid orange; */
   width: 50%;
   font-size: 120%;
   /* margin-left: 5%; */
@@ -34,29 +33,56 @@
   color: red;
 }
 
-#div-img {
-  display: flex;
-  /* border: 1px solid green; */
-  flex-direction: column;
-  justify-content: space-around;
-  height: 70%;
-  width: 5%;
-}
-
 .img-redes {
-  height: 30%;
+  height: 100%;
   width: 100%;
 }
 
 #div-redes {
   display: flex;
-  /* border: 1px solid green; */
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: space-around;
-  height: 70%;
+  height: 30%;
   width: 35%;
 }
 
 #div-redes a{
   color: white
+}
+
+@media (max-width: 1000px) {
+  #texto-footer {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  #footer-da-pag {
+    flex-direction: column;
+  }
+
+  #div-redes {
+    width: 80%;
+  }
+
+  #div-linha {
+    height: 0;
+    width: 100%;
+    margin: 1%;
+    /* border: 0; */
+  }
+}
+
+@media (max-width: 515px) {
+  #texto-footer {
+    font-size: 70%;
+    width: 100%;
+  }
+
+  #div-redes {
+    width: 100%;
+  }
+
+  #footer-da-pag {
+    padding: 5%;
+  }
 }
